@@ -1,0 +1,2 @@
+# CloudScriptWebKit
+CloudScript global resources
