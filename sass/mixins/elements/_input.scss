@@ -1,0 +1,17 @@
+input {
+	color: var(--text-gray);
+	border-radius: 3px;
+	transition: border-color ease-in 150ms;
+	height: fit-content;
+	padding: 0.5vh;
+	flex-basis: 100%;
+	font-weight: 300;
+
+	&.light:focus {
+		border-color: var(--primary) !important;
+	}
+
+	&::placeholder {
+		font-size: 80%;
+	}
+}

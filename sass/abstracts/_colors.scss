@@ -1,0 +1,44 @@
+:root {
+	--white: #ffff;
+	--p1: #1f3a2e;
+	--background: #1c2422;
+	--dark: #222b28;
+	--dark-trans: hsla(165, 11%, 14%, 0.9);
+	--primary: #2c9060;
+	--green-dark: hsla(151, 53%, 37%, 0.21);
+	--green-light: #3cb87c;
+	--violet-primary: #9747ff;
+	--violet-light: #d1a8ff;
+	--text-primary: #d1d1d1;
+	--text-dark: #97a19d;
+	--text-gray: #676969;
+}
+
+// User components theme apply
+input.light,
+button.light {
+	border: 3px solid var(--text-dark);
+}
+
+input.special,
+button.special {
+	background-color: transparent;
+	border: 2px dashed var(--violet-primary);
+}
+
+input.light {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+button {
+	&.light {
+		color: var(--primary);
+		background-color: var(--white);
+	}
+
+	&._outline {
+		border: 2.5px solid var(--primary);
+		background-color: transparent;
+		color: var(--primary);
+	}
+}

@@ -1,0 +1,61 @@
+@mixin button {
+	border-color: transparent;
+	background-color: var(--primary);
+	border-radius: 5px;
+	color: var(--text-primary);
+	cursor: pointer;
+	transition: border-color ease-in 150ms;
+	font-weight: 600;
+
+	&:hover,
+	&.light:hover,
+	&.light:focus {
+		border-color: var(--primary) !important;
+	}
+
+	&.light {
+		&:hover,
+		&:focus {
+			background-color: hsl(0, 0%, 100%, 0.844);
+		}
+	}
+
+	&._outline {
+		&:focus,
+		&:hover {
+			background-color: hsla(151, 53%, 37%, 0.161);
+		}
+	}
+
+	&:focus,
+	&:hover {
+		box-shadow: 1.5px 2px 4px hsla(0, 0%, 0%, 0.384);
+		background-color: hsla(151, 53%, 37%, 0.84);
+	}
+
+	&.sm,
+	&.md {
+		padding: 0.7em 1em;
+	}
+
+	&.lg,
+	&.xl {
+		padding: 1em 2em;
+	}
+
+	&.sm {
+		font-size: var(--fs-sm);
+	}
+
+	&.md {
+		font-size: var(--fs-md);
+	}
+
+	&.lg {
+		font-size: var(--fs-lg);
+	}
+
+	&.xl {
+		font-size: var(--fs-xl);
+	}
+}
