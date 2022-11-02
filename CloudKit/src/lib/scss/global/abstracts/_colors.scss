@@ -1,48 +1,39 @@
+$borders: hsla(0, 0%, 100%, 0.19) !default;
+$white: #ffff !default;
+$background: #202123 !default;
+$component: #353535 !default;
+$component_dark: #1d1e20 !default;
+$dark-trans: hsla(165, 11%, 14%, 0.9) !default;
+$primary: #2c9060 !default;
+$green-light: #3cb87c !default;
+$violet-primary: #9747ff !default;
+$violet-light: #d1a8ff !default;
+$text-primary: #d1d1d1 !default;
+$text-gray: #8e8e8e !default;
+$error: #d82c20 !default;
+$warning: #f49600 !default;
+$success: #2c9160 !default;
+$yellowie: #daff0f !default;
+
 :root {
-	--borders: hsla(0, 0%, 100%, 0.19);
-	--white: #ffff;
-	--p1: #1f3a2e;
-	--background: #202123;
-	--component: #353535;
-	--dark-trans: hsla(165, 11%, 14%, 0.9);
-	--primary: #2c9060;
-	--green-light: #3cb87c;
-	--violet-primary: #9747ff;
-	--violet-light: #d1a8ff;
-	--text-primary: #d1d1d1;
-	--text-gray: #8e8e8e;
-	--error: #d82c20;
-	--warning: #f49600;
-	--success: #2c9160;
-	--yellowie: #daff0f;
-	--lol: #1d1e20;
+	--borders: #{$borders};
+	--white: #{$white};
+	--background: #{$background};
+	--component: #{$component};
+	--component-dark: #{$component_dark};
+	--dark-trans: #{$dark-trans};
+	--primary: #{$primary};
+	--green-light: #{$green-light};
+	--violet-primary: #{$violet-primary};
+	--violet-light: #{$violet-light};
+	--text-primary: #{$text-primary};
+	--text-gray: #{$text-gray};
+	--error: #{$error};
+	--warning: #{$warning};
+	--success: #{$success};
+	--yellowie: #{$yellowie};
 }
 
-/*
-/// @colors theme-colors
-/// @group Abstracts
-$theme-colors: (
-	--borders: hsla(0, 0%, 100%, 0.19),
-	--white: var(--white),
-	--p1: #1f3a2e,
-	--background: #202123,
-	--component: #353535,
-	--dark-trans: hsla(165, 11%, 14%, 0.9),
-	--primary: #2c9060,
-	--green-light: #3cb87c,
-	--violet-primary: #9747ff,
-	--violet-light: #d1a8ff,
-	--text-primary: #d1d1d1,
-	--text-gray: #8e8e8e,
-	--error: #d82c20,
-	--warning: #f49600,
-	--success: #2c9160,
-	--yellowie: #daff0f,
-	--lol: #1d1e20
-); */
-
-//@include add('colors', 'ThemeColors', $theme-colors);
-// COLOR SPANS
 span {
 	&.error {
 		color: var(--error);
@@ -61,8 +52,6 @@ span {
 	}
 }
 
-/// @name ElementsTheme
-/// @group Abstracts
 .dark-component {
 	background-color: var(--component);
 	border: 1px var(--borders) solid;

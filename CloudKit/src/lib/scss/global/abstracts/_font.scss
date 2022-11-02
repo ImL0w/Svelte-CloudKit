@@ -1,14 +1,5 @@
 @use '../utility/responsive.scss' as *;
-////
-/// This is a poster comment.
-/// It will apply annotations to all items from file.
-/// @group Abstracts
-////
 
-/// @name ResponsiveFont
-/// @group Abstracts
-/// asdasd
-///
 $family-mono-url: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap' !default;
 $family-sans-url: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' !default;
 $font-family-mono: Fira Code !default;
@@ -57,9 +48,6 @@ $font-family-sans: Inter !default;
 	}
 }
 
-/// asdasdasd
-/// @group Abstracts
-///
 .fs-h1 {
 	font-size: var(--fs-h1) !important;
 }

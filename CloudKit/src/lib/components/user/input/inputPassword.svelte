@@ -4,7 +4,7 @@
 	// ENMUS
 	import { Themes } from '$lib/ts/enum/Themes';
 	// COMPONENTS
-	import Tag from '$lib/svelte/layout/Tag.svelte';
+	import Tag from '$lib/components/layout/Tag.svelte';
 	// EXPORTS
 	export let animations = false;
 	export let enterKeyFunc: (() => void) | null = null;
@@ -48,7 +48,7 @@
 		on:keydown={handleKeyEnter}
 		{placeholder}
 		style:background-image={suffixImagePath ? `url(${suffixImagePath})` : null}
-		type="text"
+		type="password"
 	/>
 </div>
 

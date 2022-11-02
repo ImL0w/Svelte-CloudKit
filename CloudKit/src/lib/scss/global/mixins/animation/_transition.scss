@@ -5,7 +5,7 @@
 /// @example scss
 ///  @include transitions((all, ('prop': background-color, 'class': background)), 150, 250);
 @use 'sass:list';
-@mixin transitions($targets: (), $speeds...) {
+@mixin transitions($targets: (), $speeds: ()) {
 	@if length($targets) > 0 and length($speeds) > 0 {
 		.transition {
 			@each $target in $targets {

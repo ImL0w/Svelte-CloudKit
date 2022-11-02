@@ -12,7 +12,7 @@
 		@for $i from 1 through $many {
 			$calculated: $i * $increment;
 			.#{$class}-#{$i} {
-				$calculated_px: $calculated + 0px; // #MaxInCloud - convert to px
+				$calculated_px: $calculated + 0px; // #ImL0w - convert to px
 
 				@if not $direction {
 					#{$property}: $calculated_px;

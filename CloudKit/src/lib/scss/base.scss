@@ -1,104 +1,34 @@
-@use 'global' as *;
-html {
-	scroll-behavior: smooth;
-	body {
-		background-color: var(--background);
-		margin: 0;
-		max-width: 100vw;
-		min-height: 100vh;
-		@extend .overflow-x;
+$config: null !default;
+$spacings: (
+	boxed: null,
+    fluid: null,
+) !default;
 
-		#index {
-			min-height: 100vh;
+$transitions: (
+	set: (
+		all,
+		fill,
+		width,
+		(
+			prop: border-color,
+			class: borderColor,
+			speed: 85
+		),
+		(
+			prop: background-color,
+			class: background
+		),
+		(
+			prop: max-width,
+			class: maxW
+		),
+		(
+			class: opacity,
+			speed: 85
+		)
+	),
+	speeds: append(150, 250)
+) !default;
 
-			#app-content {
-				flex: 1;
-				@extend .fluid-content;
-				@extend .overflow-h;
-			}
-
-			h1 {
-				@include h1;
-			}
-
-			h2,
-			.h2 {
-				@include h2;
-			}
-
-			h3,
-			.h3 {
-				@include h3;
-			}
-
-			h4,
-			.h4 {
-				@include h4;
-			}
-
-			h5,
-			.h5 {
-				@include h5;
-			}
-
-			p {
-				@include p;
-			}
-
-			a {
-				@include a;
-			}
-
-			.input-text input,
-			input[type='text'] {
-				@include inputField;
-			}
-
-			input[type='checkbox'] {
-				@include checkbox;
-			}
-
-			button {
-				@include button;
-			}
-
-			img {
-				@include image;
-			}
-
-			table {
-				@include DataTable;
-			}
-
-			*,
-			*::after,
-			*::before {
-				-webkit-box-sizing: border-box !important;
-				-moz-box-sizing: border-box !important;
-				-ms-box-sizing: border-box !important;
-				box-sizing: border-box !important;
-			}
-
-			*::selection,
-			*::-moz-selection {
-				color: hsla(151, 92%, 70%, 0.9);
-				background-color: #ffffff30;
-			}
-
-			@include flexbox; // #MaxInCloud - Custom flexbox mixins
-			@include transitions(
-				(
-					all,
-					fill,
-					width,
-					(prop: border-color, class: borderColor, speed: 85),
-					(prop: background-color, class: background),
-					(prop: max-width, class: maxW),
-					(class: opacity, speed: 85)
-				),
-				150,
-				250
-			); // #MaxInCloud - Classes for transition animations
-		}
-	}
-}
+@use './template.scss' as DefaultTemplate with($global_cnfg: $config, $transitions: $transitions);
+@include DefaultTemplate.generate;
