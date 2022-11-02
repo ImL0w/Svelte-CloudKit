@@ -1,7 +1,6 @@
-# <p align="center" />CloudKit <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png" width="23px"/> <img src="https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png" width="26px"/>
-<br />
+# CloudKit
 
-## Free lightweight library for svelte/kit projects! (60.7 kB) 
+## Free lightweight library for svelte/kit projects! (65.6 kB) 
 *Created and used by [CloudScript](https://www.cloudscript.live/en/). Currently **under development!***
 
 ## **Disclaimer** ⚠️
