@@ -4,7 +4,7 @@
 ## Free lightweight library for svelte/kit projects! (60.7 kB) 
 *Created and used by [CloudScript](https://www.cloudscript.live/en/). Currently **under development!***
 
-## **Disclaimer**
+## **Disclaimer** ⚠️
 `This package is not meant for production for now`. Many things are still missing and the docs still are not done. Anyways, it's fairly stable.
 
 <br />
