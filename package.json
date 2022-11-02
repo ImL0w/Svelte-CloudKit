@@ -1,8 +1,7 @@
 {
-  "dependencies": {
-    "sass": "^1.55.0"
-  },
   "devDependencies": {
+    "sass": "^1.55.0",
+    "svelte-preprocess": "^4.10.7",
     "svelte2tsx": "^0.5.20"
   }
 }

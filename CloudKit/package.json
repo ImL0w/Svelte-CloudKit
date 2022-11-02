@@ -14,6 +14,18 @@
 	"exports": {
 		".": "./src/lib"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ImL0w/Svelte-CloudKit.git"
+	},
+	"keywords": [
+		"svelte",
+		"svelte-kit",
+		"reusable",
+		"scss",
+		"responsive",
+		"framework"
+	],
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
