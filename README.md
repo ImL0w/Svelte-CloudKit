@@ -1,4 +1,4 @@
-# CloudScript Web-Kit
-### Public repo for global resources
+# CloudKit
+### Svelte components and sass
 
-Here you will find global resources used for CloudScript apps.
+TODO
