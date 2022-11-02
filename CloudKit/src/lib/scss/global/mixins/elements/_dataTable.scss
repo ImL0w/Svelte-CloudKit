@@ -1,0 +1,82 @@
+@use '../../utility/responsive.scss' as *;
+
+@mixin DataTable($border-color: var(--borders)) {
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	tbody {
+		/*tr:first-child {
+			  th:first-child &::after {
+				background-color: #ffffff25;
+				clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+				content: '';
+				height: 1em;
+				position: absolute;
+				right: 0;
+				transform: rotate(90deg);
+				top: 50%;
+				width: 1.2em;
+			}
+		}*/
+
+		tr {
+			th,
+			td {
+				max-width: 200px;
+				padding: 7vw 0.4em;
+				text-align: start;
+				white-space: nowrap;
+				width: fit-content;
+
+				&:first-child {
+					background-color: #314a3f;
+					border: none;
+					box-shadow: inset 4px 0 10px #0000001f;
+					left: 0;
+					position: sticky;
+					z-index: 10;
+				}
+
+				h4 {
+					height: 30px;
+					overflow-x: scroll;
+					overflow-y: scroll;
+					width: fit-content;
+				}
+
+				img {
+					margin-right: 0.3em;
+				}
+			}
+
+			&:not(:last-child) {
+				border-bottom: 2px solid $border-color;
+			}
+
+			th:nth-child(1) {
+				border-radius: 4px 4px 0 0;
+			}
+
+			&:last-child td:first-child {
+				border-radius: 0 0 4px 4px;
+			}
+
+			&:hover {
+				background-color: #35353560;
+			}
+		}
+	}
+
+	// TABLET +
+	@include mediaMin($tablet) {
+		tbody {
+			tr {
+				th,
+				td {
+					padding-top: 1em;
+					padding-bottom: 1em;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,108 @@
+:root {
+	--borders: hsla(0, 0%, 100%, 0.19);
+	--white: #ffff;
+	--p1: #1f3a2e;
+	--background: #202123;
+	--component: #353535;
+	--dark-trans: hsla(165, 11%, 14%, 0.9);
+	--primary: #2c9060;
+	--green-light: #3cb87c;
+	--violet-primary: #9747ff;
+	--violet-light: #d1a8ff;
+	--text-primary: #d1d1d1;
+	--text-gray: #8e8e8e;
+	--error: #d82c20;
+	--warning: #f49600;
+	--success: #2c9160;
+	--yellowie: #daff0f;
+	--lol: #1d1e20;
+}
+
+/*
+/// @colors theme-colors
+/// @group Abstracts
+$theme-colors: (
+	--borders: hsla(0, 0%, 100%, 0.19),
+	--white: var(--white),
+	--p1: #1f3a2e,
+	--background: #202123,
+	--component: #353535,
+	--dark-trans: hsla(165, 11%, 14%, 0.9),
+	--primary: #2c9060,
+	--green-light: #3cb87c,
+	--violet-primary: #9747ff,
+	--violet-light: #d1a8ff,
+	--text-primary: #d1d1d1,
+	--text-gray: #8e8e8e,
+	--error: #d82c20,
+	--warning: #f49600,
+	--success: #2c9160,
+	--yellowie: #daff0f,
+	--lol: #1d1e20
+); */
+
+//@include add('colors', 'ThemeColors', $theme-colors);
+// COLOR SPANS
+span {
+	&.error {
+		color: var(--error);
+	}
+
+	&.warning {
+		color: var(--warning);
+	}
+
+	&.success {
+		color: var(--success);
+	}
+
+	&.special {
+		color: var(--violet-light);
+	}
+}
+
+/// @name ElementsTheme
+/// @group Abstracts
+.dark-component {
+	background-color: var(--component);
+	border: 1px var(--borders) solid;
+	&:active {
+		background-color: rgba(54, 54, 54, 0.842);
+	}
+}
+
+.primary-component {
+	background-color: var(--primary);
+	border: 1px solid #acacac9a;
+	&:focus,
+	&:hover {
+		background-color: hsla(151, 53%, 37%, 0.9);
+	}
+}
+
+.light-component {
+	background-color: var(--white);
+	color: rgba(0, 0, 0, 0.6);
+	&:hover,
+	&:focus {
+		background-color: hsl(0, 0%, 100%, 0.844);
+	}
+}
+
+.special-component {
+	border: 1px double var(--violet-primary);
+	background-color: transparent;
+	color: var(--text-primary);
+	transition: background 250ms ease-in-out;
+
+	&:hover,
+	&:focus {
+		background-color: #ffffff0d !important;
+	}
+}
+
+.dark-component,
+.primary-component,
+.light-component {
+	color: var(--text-primary);
+}

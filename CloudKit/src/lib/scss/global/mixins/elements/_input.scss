@@ -1,0 +1,18 @@
+@mixin inputField($padding: 0.5rem, $prefixImageSize: 25px) {
+	background-color: transparent;
+	border: none;
+	color: var(--text-primary);
+	outline: none;
+	padding: $padding $padding;
+
+	&.img-suffix {
+		background-position: $padding center;
+		background-position-x: calc(100% - $padding);
+		background-repeat: no-repeat;
+		padding-right: calc($prefixImageSize + 0.5em + $padding);
+	}
+
+	&::placeholder {
+		font-size: 90%;
+	}
+}

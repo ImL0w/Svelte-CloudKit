@@ -1,0 +1,35 @@
+/// This mixin creates reusable classes of given property with an incrementing value.
+/// @group Utility
+/// @param {property} $property - Desired property to be used
+/// @param {string} $class - Class name prefix
+/// @param {number} $many [0] - How many classes should be generated
+/// @param {number} $increment [5] - Value to increment * $many
+/// @param {false|x|y} $direction [false] - In wich direction the values should be applied. If set to false, on all directions the value will be applied.
+/// @example scss
+///  @include repeat(gap, 'gap', 5, 6, y);
+@mixin repeat($property, $class: '', $many: 0, $increment: 5, $direction: false) {
+	@if $property and str-length($class) > 0 and $many > 0 {
+		@for $i from 1 through $many {
+			$calculated: $i * $increment;
+			.#{$class}-#{$i} {
+				$calculated_px: $calculated + 0px; // #MaxInCloud - convert to px
+
+				@if not $direction {
+					#{$property}: $calculated_px;
+				} @else {
+					@if $direction == x {
+						#{$property}: 0 $calculated_px 0;
+					} @else if $direction == y {
+						#{$property}: $calculated_px 0 $calculated_px;
+					} @else {
+						@error 'Wrong direction set! It must be "x" or "y". You set [ ' + $direction + ' ]';
+					}
+				}
+			}
+		}
+	} @else {
+		@error '$property/$class/$many is invalid!';
+	}
+}
+// TODO
+@mixin props() {}

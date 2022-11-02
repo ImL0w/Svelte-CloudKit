@@ -1,0 +1,30 @@
+.rlv {
+	position: relative;
+}
+
+.abs {
+	position: absolute;
+}
+
+.vr-align-top {
+	vertical-align: top;
+}
+
+.align-center {
+	align-self: center;
+}
+
+.align-bottom {
+	align-self: flex-end;
+}
+
+.abs-t-l {
+	top: 1em;
+	left: 1em;
+	@extend .abs;
+}
+
+.abs-b {
+	bottom: 0;
+	@extend .abs;
+}

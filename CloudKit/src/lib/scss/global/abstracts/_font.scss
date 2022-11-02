@@ -1,0 +1,85 @@
+@use '../utility/responsive.scss' as *;
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Abstracts
+////
+
+/// @name ResponsiveFont
+/// @group Abstracts
+/// asdasd
+///
+$family-mono-url: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap' !default;
+$family-sans-url: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' !default;
+$font-family-mono: Fira Code !default;
+$font-family-sans: Inter !default;
+
+@import url($family-mono-url);
+@import url($family-sans-url);
+
+:root {
+	// XS
+	--fs-h1: 2rem;
+	--fs-h2: 1.3rem;
+	--fs-lg: 1.1rem;
+	--fs-md: 0.9rem;
+	--fs-sm: 0.75rem;
+	--fs-xs: 0.55rem;
+	// font families
+	--mono: #{$font-family-mono};
+	--sans: #{$font-family-sans};
+
+	@include mediaMin($mobile) {
+		--fs-h1: 3rem;
+		--fs-h2: 2.8rem;
+		--fs-lg: 1.4rem;
+		--fs-md: 1.13rem;
+		--fs-sm: 1rem;
+		--fs-xs: 0.67rem;
+	}
+
+	@include mediaMin($tablet) {
+		--fs-h1: 4rem;
+		--fs-h2: 2.8rem;
+		--fs-lg: 1.4rem;
+		--fs-md: 1.13rem;
+		--fs-sm: 1rem;
+		--fs-xs: 0.67rem;
+	}
+
+	@include mediaMin($pc) {
+		--fs-h1: 4rem;
+		--fs-h2: 2.8rem;
+		--fs-lg: 1.5rem;
+		--fs-md: 1.3rem;
+		--fs-sm: 1.13rem;
+		--fs-xs: 0.8rem;
+	}
+}
+
+/// asdasdasd
+/// @group Abstracts
+///
+.fs-h1 {
+	font-size: var(--fs-h1) !important;
+}
+
+.fs-h2 {
+	font-size: var(--fs-h2) !important;
+}
+
+.fs-xs {
+	font-size: var(--fs-xs) !important;
+}
+
+.fs-sm {
+	font-size: var(--fs-sm) !important;
+}
+
+.fs-md {
+	font-size: var(--fs-md) !important;
+}
+
+.fs-lg {
+	font-size: var(--fs-lg) !important;
+}

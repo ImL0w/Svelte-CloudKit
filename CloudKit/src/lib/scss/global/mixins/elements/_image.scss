@@ -1,0 +1,36 @@
+@use '../../utility/responsive.scss' as *;
+
+$logo-size: 3em !default;
+$icon-size: 1.6em !default;
+$logo-size-responsive: 4.4em !default;
+$icon-size-responsive: 1.8em !default;
+
+:root {
+	--logo-size: #{$logo-size};
+	--icon-size: #{$icon-size};
+}
+
+@include mediaMin($tablet) {
+	:root {
+		--logo-size: #{$logo-size-responsive};
+		--icon-size: #{$icon-size-responsive};
+	}
+}
+
+@mixin image {
+	user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-webkit-user-select: none;
+
+	&.logo {
+		max-height: var(--logo-size);
+		max-width: var(--logo-size);
+	}
+
+	&.icon {
+		max-height: var(--icon-size);
+		max-width: var(--icon-size);
+	}
+}

@@ -1,0 +1,24 @@
+@mixin checkbox($box-padding: 0.7em, $box-thick-size: 1em) {
+	appearance: none;
+	border: 2px var(--borders) solid;
+	border-radius: 2px;
+	display: grid;
+	padding: $box-padding;
+	place-content: center;
+	-webkit-appearance: none;
+
+	&::before {
+		box-shadow: inset 1em 1em var(--text-gray);
+		clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+		content: '';
+		height: $box-thick-size;
+		transform: scale(0);
+		transform-origin: bottom left;
+		transition: 90ms transform ease-in-out;
+		width: $box-thick-size;
+	}
+
+	&:checked::before {
+		transform: scale(1);
+	}
+}

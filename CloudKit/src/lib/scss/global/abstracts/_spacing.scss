@@ -1,0 +1,54 @@
+@use '../utility' as *;
+
+:root {
+	--boxed: 9% 7%;
+	--fluid: 3.5% 5.5%;
+}
+
+@include mediaMin($tablet) {
+	:root {
+		--boxed: 9% 7%;
+		--fluid: 2.5% 3.5%;
+	}
+}
+
+.boxed-content {
+	padding: var(--boxed);
+}
+
+.fluid-content {
+	padding: var(--fluid);
+}
+
+@include repeat(gap, 'gap', 10);
+@include repeat(margin, 'm-y', 5, 5, y);
+@include repeat(margin-left, 'm-l', 5);
+@include repeat(margin-right, 'm-r', 5);
+@include repeat(margin-top, 'm-t', 5);
+@include repeat(margin-bottom, 'm-b', 5);
+
+.m-0 {
+	margin: 0 !important;
+}
+
+.m-l-auto {
+	margin-left: auto;
+}
+
+.p-0 {
+	padding: 0 !important;
+}
+
+.py-0 {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.px-0 {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.gap-15 {
+	gap: 75px;
+}

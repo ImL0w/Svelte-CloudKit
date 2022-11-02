@@ -1,0 +1,82 @@
+@use '../utility/responsive.scss' as *;
+
+.hide {
+	display: none !important;
+
+	&-sm {
+		@include mediaMin($mobile) {
+			display: none;
+		}
+	}
+
+	&-md {
+		@include mediaMin($tablet) {
+			display: none;
+		}
+	}
+
+	&-lg {
+		@include mediaMin($pc) {
+			display: none;
+		}
+	}
+
+	&-xl {
+		@include mediaMin($tv) {
+			display: none;
+		}
+	}
+}
+
+.show {
+	&-sm,
+	&-md,
+	&-lg,
+	&-xl {
+		display: none;
+	}
+
+	&-sm {
+		@include mediaMin($mobile) {
+			display: inherit !important;
+		}
+	}
+
+	&-md {
+		@include mediaMin($tablet) {
+			display: inherit !important;
+		}
+	}
+
+	&-lg {
+		@include mediaMin($pc) {
+			display: inherit !important;
+		}
+	}
+
+	&-xl {
+		@include mediaMin($tv) {
+			display: inherit !important;
+		}
+	}
+}
+
+.overflow {
+	@each $direction in '', -x, -y {
+		&#{$direction} {
+			@each $appendix in h, scr {
+				&-#{$appendix} {
+					overflow#{$direction}: if($appendix == h, hidden, scroll);
+				}
+			}
+		}
+	}
+}
+
+.rotate {
+	@each $deg in 90, 180 {
+		&-#{$deg} {
+			transform: rotate(#{$deg}deg);
+		}
+	}
+}

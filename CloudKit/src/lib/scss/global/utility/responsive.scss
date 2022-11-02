@@ -1,0 +1,41 @@
+@forward 'vars/screenSize';
+/// This mixin creates a media breakpoin (min-width) at given value.
+/// @group Utility
+/// @param {number} $breakPoint [0em] - Breakpoint value
+/// @content scss stylings
+/// @example scss
+///  @include mediaMin(50em){
+/// 	 body {
+/// 	 	 display: none;
+/// 	 }
+///  };
+///
+@mixin mediaMin($breakPoint: 0em) {
+	@if $breakPoint > 0 {
+		@media (min-width: $breakPoint) {
+			@content;
+		}
+	} @else {
+		@error '$breakPoint must be > 0. Instead set at [ ' + $breakPoint + ' ]';
+	}
+}
+/// This mixin creates a media breakpoin (max-width) at given value.
+/// @group Utility
+/// @param {string} $breakPoint [0em] - Breakpoint value
+/// @content scss stylings
+/// @example scss
+///  @include mediaMax(50em){
+/// 	 body {
+/// 	 	 display: none;
+/// 	 }
+///  };
+///
+@mixin mediaMax($breakPoint: 0em) {
+	@if $breakPoint > 0 {
+		@media (max-width: $breakPoint) {
+			@content;
+		}
+	} @else {
+		@error '$breakPoint must be > 0. Instead set at [ ' + $breakPoint + ' ]';
+	}
+}
