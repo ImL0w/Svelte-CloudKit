@@ -36,7 +36,6 @@ declare global {
 	}
 
 	declare namespace TTag {
-		type color = 'red' | 'green' | 'orange' | 'violet' | 'yellowie';
 		type func = () => void;
 		type size = 'sm' | 'xs';
 	}
