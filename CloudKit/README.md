@@ -8,7 +8,7 @@
 
 <br />
 
-## **What is includes?** 🧐
+## **What is included?** 🧐
 
 #### `Svelte components`
 * Context-menu
