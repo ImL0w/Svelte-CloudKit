@@ -1,42 +1,14 @@
-$borders: hsla(0, 0%, 100%, 0.19) !default;
-$white: #ffff !default;
-$background: #202123 !default;
-$component: #353535 !default;
-$component_dark: #1d1e20 !default;
-$dark-trans: hsla(165, 11%, 14%, 0.9) !default;
-$primary: #2c9060 !default;
-$green-light: #3cb87c !default;
-$violet-primary: #9747ff !default;
-$violet-light: #d1a8ff !default;
-$text-primary: #d1d1d1 !default;
-$text-gray: #8e8e8e !default;
-$error: #d82c20 !default;
-$warning: #f49600 !default;
-$success: #2c9160 !default;
-$yellowie: #daff0f !default;
+$colorTheme: () !default;
 
 :root {
-	--borders: #{$borders};
-	--white: #{$white};
-	--background: #{$background};
-	--component: #{$component};
-	--component-dark: #{$component_dark};
-	--dark-trans: #{$dark-trans};
-	--primary: #{$primary};
-	--green-light: #{$green-light};
-	--violet-primary: #{$violet-primary};
-	--violet-light: #{$violet-light};
-	--text-primary: #{$text-primary};
-	--text-gray: #{$text-gray};
-	--error: #{$error};
-	--warning: #{$warning};
-	--success: #{$success};
-	--yellowie: #{$yellowie};
+	@each $name, $color in $colorTheme {
+		--#{"" + $name}: #{$color};
+	}
 }
 
 span {
 	&.error {
-		color: var(--error);
+		color: var(--danger);
 	}
 
 	&.warning {
@@ -46,41 +18,29 @@ span {
 	&.success {
 		color: var(--success);
 	}
-
-	&.special {
-		color: var(--violet-light);
-	}
 }
 
 .dark-component {
-	background-color: var(--component);
+	background-color: var(--gray-dark);
 	border: 1px var(--borders) solid;
 	&:active {
-		background-color: rgba(54, 54, 54, 0.842);
+		background-color: rgb(54, 54, 54);
 	}
 }
 
 .primary-component {
 	background-color: var(--primary);
 	border: 1px solid #acacac9a;
-	&:focus,
-	&:hover {
-		background-color: hsla(151, 53%, 37%, 0.9);
-	}
 }
 
 .light-component {
 	background-color: var(--white);
+	border: 1px var(--borders) solid;
 	color: rgba(0, 0, 0, 0.6);
-	&:hover,
-	&:focus {
-		background-color: hsl(0, 0%, 100%, 0.844);
-	}
 }
 
 .special-component {
-	border: 1px double var(--violet-primary);
-	background-color: transparent;
+	border: 1px double var(--special);
 	color: var(--text-primary);
 	transition: background 250ms ease-in-out;
 
@@ -91,7 +51,6 @@ span {
 }
 
 .dark-component,
-.primary-component,
-.light-component {
+.primary-component {
 	color: var(--text-primary);
 }

@@ -1,4 +1,5 @@
 @use '../../utility/responsive.scss' as *;
+@use '../../utility/vars/screenSize' as *;
 
 @mixin DataTable($border-color: var(--borders)) {
 	border-spacing: 0;

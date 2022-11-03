@@ -63,9 +63,9 @@
 
 @mixin __flexResponsive(
 	$sizes: (
-		sm: $mobile,
-		md: $tablet,
-		xl: $pc
+		sm: 3em,
+		md: 3em,
+		xl: 3em
 	)
 ) {
 	$directions: row, column;

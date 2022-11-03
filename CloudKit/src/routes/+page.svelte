@@ -1,14 +1,28 @@
+<script lang="ts">
+	import Button from '$lib/components/user/button.svelte';
+	import ContextMenu from '$lib/components/user/context-menu/contextMenu.svelte';
+	import Dropdown from '$lib/components/user/dropdown.svelte';
+	import Tag from '$lib/components/layout/Tag.svelte';
+
+	const contextMenuConfig: TContextMenu.config = {
+		items: [{ value: 'rename' }, { value: 'alert', func: () => alert(1) }, { value: 'close' }]
+	};
+</script>
+
+<Button theme="primary">Lol</Button>
+
+<ContextMenu items={contextMenuConfig.items} targetsSelector="#app-content h1" />
+
+<Tag color="primary">asdas</Tag>
+
 <div id="index" class="transition-all-250">
-    <div id="app-content">
-        <h1>Welcome!</h1>
-    </div>
+	<div id="app-content">
+		<Dropdown options={[{ img: '', value: 'lol' }, 'lol']} />
+		<h1>Welcome!</h1>
+	</div>
 </div>
 
 <style lang="scss" global>
-    @use "../lib/scss/base.scss" as * with (
-        $spacings: (
-	        boxed: null,
-            fluid: null
-        )
-   );
+	@use '../lib/scss/conf/' as CONFIG;
+	@use '../lib/scss/base.scss' as *;
 </style>

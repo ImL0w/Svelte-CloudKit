@@ -1,4 +1,5 @@
 @use '../utility/responsive.scss' as *;
+@use '../utility/vars/screenSize' as *;
 
 .hide {
 	display: none !important;

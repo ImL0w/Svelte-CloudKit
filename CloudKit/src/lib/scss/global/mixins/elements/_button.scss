@@ -1,12 +1,8 @@
-/// This mixin creates stylings and states of a html button, using CloudScript themes.
-/// @group Elements
-/// @requires {scss} ThemeColors
-/// @requires {css} ResponsiveFont
 @mixin button {
 	border-radius: 3px;
 	cursor: pointer;
 	transition: border-color ease-in 150ms;
-	font-weight: 600;
+	@extend .w-fit;
 
 	&.special {
 		@extend .special-component;
@@ -14,7 +10,7 @@
 
 	&.sm,
 	&.md {
-		padding: 0.7em 1em;
+		padding: 0.5em;
 	}
 
 	&.lg,

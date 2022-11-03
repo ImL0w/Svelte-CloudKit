@@ -1,0 +1,37 @@
+$colorTheme: (
+	background: #202123,
+	blue: #0d6efd,
+	borders: #ffffff30,
+	purple: #6f42c1,
+	purple-light: #d1a8ff,
+	pink: #d63384,
+	red: #dc3545,
+	orange: #fd7e14,
+	yellow: #ffc107,
+	green: #198754,
+	teal: #20c997,
+	text: #d1d1d1,
+	text-gray: #8e8e8e,
+	cyan: #0dcaf0,
+	white: #fff,
+	gray: #6c757d,
+	gray-dark: #343a40,
+	primary: #2c9060,
+	secondary: #6c757d,
+	special: #9747ff,
+	success: #198754,
+	info: #0dcaf0,
+	warning: #ffc107,
+	danger: #dc3545,
+	light: #f8f9fa,
+	dark: #1d1e20
+) !default;
+
+$font: (
+	family-mono-url:
+		'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap',
+	family-sans-url:
+		'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
+	font-family-mono: Fira Code,
+	font-family-sans: Inter
+) !default;

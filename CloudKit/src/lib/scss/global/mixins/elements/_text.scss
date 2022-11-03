@@ -1,5 +1,3 @@
-@use '../../abstracts/font' as FontFamilies;
-
 @mixin text($color: null, $monospace: false) {
 	@if $color {
 		color: $color;
@@ -12,9 +10,9 @@
 			font-family: var(--sans), sans-serif;
 		}
 
-		@supports (not (--a: 0)) {
-			font-family: FontFamilies.$font-family-sans, sans-serif;
-		}
+		/*		@supports (not (--a: 0)) {
+			font-family: map-get(Font.$font, 'font-family-sans'), sans-serif;
+		}*/
 	} @else {
 		@extend .mono;
 	}
@@ -30,9 +28,9 @@
 			font-family: var(--mono), monospace;
 		}
 
-		@supports (not (--a: 0)) {
-			font-family: FontFamilies.$font-family-mono, monospace;
-		}
+		/*	@supports (not (--a: 0)) {
+			font-family: map-get(Font.$font, 'font-family-mono'), monospace;
+		}*/
 	}
 
 	/* DECORATIONS */
@@ -97,7 +95,7 @@
 }
 
 @mixin a {
-	@include text(var(--violet-light));
+	@include text(var(--purple-light));
 	border-bottom: 1px solid var(--primary);
 	transition: color 250ms ease;
 	font-size: var(--fs-sm);
@@ -122,7 +120,7 @@
 
 		@media (hover: hover) {
 			&:hover::before {
-				background-color: var(--violet-light);
+				background-color: var(--purple-light);
 				width: 100%;
 			}
 		}

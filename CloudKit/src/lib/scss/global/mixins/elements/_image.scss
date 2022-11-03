@@ -1,9 +1,10 @@
 @use '../../utility/responsive.scss' as *;
+@use '../../utility/vars/index' as *;
 
-$logo-size: 3em !default;
-$icon-size: 1.6em !default;
-$logo-size-responsive: 4.4em !default;
-$icon-size-responsive: 1.8em !default;
+$logo-size: 0 !default;
+$icon-size: 0 !default;
+$logo-size-md: 0 !default;
+$icon-size-md: 0 !default;
 
 :root {
 	--logo-size: #{$logo-size};
@@ -12,8 +13,8 @@ $icon-size-responsive: 1.8em !default;
 
 @include mediaMin($tablet) {
 	:root {
-		--logo-size: #{$logo-size-responsive};
-		--icon-size: #{$icon-size-responsive};
+		--logo-size: #{$logo-size-md};
+		--icon-size: #{$icon-size-md};
 	}
 }
 

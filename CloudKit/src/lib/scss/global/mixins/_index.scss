@@ -1,3 +1,5 @@
+@use '../../conf/img-conf' as ImgConfig;
+
 @forward 'animation/transition';
 @forward 'display/flexbox';
 @forward 'elements/text';
@@ -5,5 +7,10 @@
 @forward 'elements/input';
 @forward 'elements/dataTable';
 @forward 'elements/contextMenu';
-@forward 'elements/image';
+@forward 'elements/image' with (
+	$logo-size: ImgConfig.$logo-size,
+	$icon-size: ImgConfig.$icon-size,
+	$logo-size-md: ImgConfig.$logo-size-md,
+	$icon-size-md: ImgConfig.$logo-size-md
+);
 @forward 'elements/checkbox';

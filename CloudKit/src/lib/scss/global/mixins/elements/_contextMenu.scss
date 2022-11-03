@@ -1,6 +1,4 @@
 .context-menu {
-	background-color: #3d3c3c;
-	border: 1px var(--borders) solid;
 	border-radius: 4px;
 	opacity: 0;
 	pointer-events: none;
@@ -13,11 +11,16 @@
 		opacity: 1;
 	}
 
+	&.light-component .menu-item:hover {
+		background-color: #4242422c;
+	}
+
 	.menu-item {
 		padding: 0.64em 0.5em;
 
 		h5 {
-			color: #ffffff;
+			font-weight: 400;
+			color: inherit;
 		}
 
 		img {

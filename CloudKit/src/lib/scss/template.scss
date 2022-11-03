@@ -1,8 +1,5 @@
-$global_cnfg: null !default;
-$transitions: null !default;
-@use 'global' as * with (
-	$config: $global_cnfg
-);
+@use 'conf/' as TransitionsConf;
+@use 'global' as *;
 
 @mixin generate {
 	html {
@@ -13,6 +10,31 @@ $transitions: null !default;
 			max-width: 100vw;
 			min-height: 100vh;
 			@extend .overflow-x;
+
+			@include flexbox;
+			@include transitions(
+				map-get(TransitionsConf.$transitions, 'set'),
+				map-get(TransitionsConf.$transitions, 'speeds')
+			);
+
+			&,
+			*,
+			*::after,
+			*::before {
+				-webkit-box-sizing: border-box !important;
+				-moz-box-sizing: border-box !important;
+				-ms-box-sizing: border-box !important;
+				box-sizing: border-box !important;
+			}
+
+			#index {
+				height: 100vh;
+				#app-content {
+					@extend .fluid-content;
+					@extend .h-100;
+					@extend .overflow-h;
+				}
+			}
 
 			h1,
 			.h1 {
@@ -66,30 +88,6 @@ $transitions: null !default;
 
 			table {
 				@include DataTable;
-			}
-
-			*,
-			*::after,
-			*::before {
-				-webkit-box-sizing: border-box !important;
-				-moz-box-sizing: border-box !important;
-				-ms-box-sizing: border-box !important;
-				box-sizing: border-box !important;
-			}
-
-			@include flexbox; // #ImL0w - Custom flexbox mixins
-			@include transitions(
-				map-get($transitions, "set"),
-				map-get($transitions, "speeds")
-			); // #ImL0w - Classes for transition animations
-
-			#index {
-				height: 100vh;
-				#app-content {
-					@extend .fluid-content;
-					@extend .h-100;
-					@extend .overflow-h;
-				}
 			}
 		}
 	}

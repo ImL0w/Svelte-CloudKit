@@ -1,3 +1,10 @@
-@forward './vars/';
+@use '../../conf/vars' as Config;
+
+@forward './vars/' with (
+	$mobile: Config.$mobile,
+	$tablet: Config.$tablet,
+	$pc: Config.$pc,
+	$tv: Config.$tv
+);
 @forward './responsive';
 @forward './property';

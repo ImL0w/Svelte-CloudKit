@@ -1,12 +1,10 @@
 @use '../utility/responsive.scss' as *;
+@use '../utility/vars/screenSize' as *;
 
-$family-mono-url: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap' !default;
-$family-sans-url: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' !default;
-$font-family-mono: Fira Code !default;
-$font-family-sans: Inter !default;
+$font: () !default;
 
-@import url($family-mono-url);
-@import url($family-sans-url);
+@import url(map-get($font, 'family-mono-url'));
+@import url(map-get($font, 'family-sans-url'));
 
 :root {
 	// XS
@@ -17,8 +15,8 @@ $font-family-sans: Inter !default;
 	--fs-sm: 0.75rem;
 	--fs-xs: 0.55rem;
 	// font families
-	--mono: #{$font-family-mono};
-	--sans: #{$font-family-sans};
+	--mono: #{map-get($font, 'font-family-mono')};
+	--sans: #{map-get($font, 'font-family-sans')};
 
 	@include mediaMin($mobile) {
 		--fs-h1: 3rem;

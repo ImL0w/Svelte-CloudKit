@@ -1,14 +1,19 @@
 @use '../utility' as *;
 
+$boxed: 0 !default;
+$fluid: 0 !default;
+$boxed-md: 0 !default;
+$fluid-md: 0 !default;
+
 :root {
-	--boxed: 9% 7%;
-	--fluid: 3.5% 5.5%;
+	--boxed: #{$boxed};
+	--fluid: #{$fluid};
 }
 
 @include mediaMin($tablet) {
 	:root {
-		--boxed: 9% 7%;
-		--fluid: 2.5% 3.5%;
+		--boxed: #{$boxed-md};
+		--fluid: #{$fluid-md};
 	}
 }
 
