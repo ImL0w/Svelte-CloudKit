@@ -17,7 +17,7 @@
 	export let theme: Theme.Colors | Themes | string = Themes.DARK;
 	export let classList: string = '';
 	export let hidden = false;
-	export let tag: { color: TTag.color; value: string } | null = null;
+	export let tag: { color: string; value: string } | null = null;
 	export let prefixImage: { path: string; focus?: boolean } | null = null;
 	export let suffixImagePath = '';
 	// LOGIC

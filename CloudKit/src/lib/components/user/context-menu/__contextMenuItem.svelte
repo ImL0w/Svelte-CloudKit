@@ -1,6 +1,4 @@
 <script lang="ts">
-	// UTILITY
-	import { grabberPNG } from '$lib/ts/utility/iconGrabber';
 	// EXPORTS
 	export let item: TContextMenu.item;
 	export let commonFunction: TContextMenu.commonFunction | null = null;
@@ -17,7 +15,7 @@
 	on:contextmenu={preventContextMenu}
 >
 	{#if item.img}
-		<img class="m-r-1" src={grabberPNG.get('interact', item.img)} alt="" />
+		<img class="m-r-1" src={item.img} alt="" />
 	{/if}
 	<h5 class="w-100 space-nowrap capit">{item.value}</h5>
 	{#if item.inner}

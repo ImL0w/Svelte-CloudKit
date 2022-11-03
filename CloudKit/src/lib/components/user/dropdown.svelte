@@ -4,20 +4,20 @@
 	// EXPORTS
 	export let name = '',
 		id = '';
-	export let options: Array<{ img: string; value: any } | any>;
-	export let theme: Theme.Colors = 'dark',
+	export let options: Array<{ img: string; value: string } | string>;
+	export let theme: Theme.Colors | string = 'dark',
 		size: Theme.FontSizes = 'xs';
 	export let selected: any = undefined;
 </script>
 
-<div class={concatClasses('dropdown', theme, 'flex-vr')}>
+<div class={concatClasses('dropdown', `${theme}-component`, 'flex-vr')}>
 	<select {id} {name} class={`w-100 fs-${size}`} bind:value={selected}>
 		{#each options as option}
-			<option value={option.value || option}>
-				{#if option.img}
+			<option value={option?.value || option}>
+				{#if option?.img}
 					<img src={option.img} alt="" />
 				{/if}
-				{option.value || option}
+				{option?.value || option}
 			</option>
 		{/each}
 	</select>
@@ -25,18 +25,17 @@
 
 <style lang="scss">
 	.dropdown {
-		background-color: var(--component);
-		border: 1px var(--borders) solid;
 		border-radius: 3px;
 		display: grid;
 		grid-template-areas: 'select';
 		min-width: 10ch;
+		width: fit-content;
 
 		select {
 			appearance: none;
 			background-color: transparent;
 			border: none;
-			color: var(--text-primary);
+			color: inherit;
 			cursor: inherit;
 			font-family: var(--mono);
 			outline: none;
@@ -47,15 +46,19 @@
 				display: none;
 			}
 		}
-
+		
 		&::after {
 			clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 			content: '';
-			background-color: hsla(0, 0%, 100%, 0.33);
+			background-color: var(--borders);
 			height: 0.5em;
 			justify-self: end;
 			margin-right: 0.5em;
 			width: 0.8em;
+		}
+
+		&.light-component::after {
+			background-color: #000000ab;
 		}
 
 		select,

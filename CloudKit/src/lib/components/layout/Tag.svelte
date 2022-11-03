@@ -3,16 +3,17 @@
 	import { concatClasses } from '$lib/ts/utility/array';
 	// EXPORTS
 	export let classList = '';
-	export let color: TTag.color,
+	export let color: string,
 		func: TTag.func | null = null,
 		size: TTag.size = 'xs';
 	export let textColor: string = '';
 </script>
 
 <div
-	class={concatClasses('tag flex flex-all h-fit overflow-h', color, classList)}
+	class={concatClasses('tag flex flex-all h-fit overflow-h', classList)}
 	class:pointer={func}
 	on:click={func}
+	style:background-color={`var(--${color})`}
 >
 	<h5 class:fs-sm={size === 'sm'} style:color={textColor}><slot /></h5>
 </div>
@@ -26,7 +27,7 @@
 		&.red {
 			background-color: hsla(4, 68%, 48%, 0.49);
 			h5 {
-				color: var(--error);
+				color: var(danger);
 			}
 
 			&:hover {
@@ -59,7 +60,7 @@
 		&.violet {
 			background-color: hsla(266, 100%, 64%, 0.49);
 			h5 {
-				color: var(--violet-primary);
+				color: var(--purple);
 			}
 
 			&:hover {

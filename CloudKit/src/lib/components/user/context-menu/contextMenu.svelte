@@ -15,10 +15,11 @@ This is a fully functional context menu. It inherits CloudScript scss themes.
 	// COMPONENTS
 	import ContextMenuItem from './__contextMenuItem.svelte';
 	// EXPORTS
-	export let items: TContextMenu.item[];
 	export let commonFunction: TContextMenu.commonFunction | null = null,
 		contextMenuEvent: TContextMenu.contextMenuEvent = () => {};
+	export let items: TContextMenu.item[];
 	export let targetsSelector: string;
+	export let theme: Theme.Colors | string = 'dark';
 	export const refreshListeners = () => setListeners();
 	// LOGIC
 	let contextMenuInstance: HTMLElement;
@@ -59,7 +60,7 @@ This is a fully functional context menu. It inherits CloudScript scss themes.
 
 <div
 	bind:this={contextMenuInstance}
-	class="context-menu flex-col w-fit transition-opacity-85"
+	class={`context-menu flex-col w-fit transition-opacity-85 ${theme}-component`}
 	on:click={onClickClose}
 	style:top
 	style:left
