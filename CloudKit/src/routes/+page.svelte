@@ -23,6 +23,5 @@
 </div>
 
 <style lang="scss" global>
-	@use '../lib/scss/conf/' as CONFIG;
-	@use '../lib/scss/base.scss' as *;
+	@use '../lib/scss/base.scss' with ($boxed: 100px);
 </style>
