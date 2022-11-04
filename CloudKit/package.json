@@ -5,6 +5,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"description": "Free lightweight library for svelte/kit projects! (~75.3 kB)",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
