@@ -1,6 +1,6 @@
 # CloudKit
 
-## Free lightweight library for svelte/kit projects! (75.3 kB) 
+## Free lightweight library for svelte/kit projects! (~75.3 kB) 
 *Created and used by [CloudScript](https://www.cloudscript.live/en/). Currently **under development!***
 
 ## **Disclaimer** ⚠️
@@ -43,7 +43,7 @@
     * mobile
     * desktop
 
-#### `SCSS eco-system`
+#### `SCSS ecosystem`
 * Auto page [?](#auto-page)
 * Global themes (every element inherits corresponding theme)
 * Global font responsiveness
@@ -59,10 +59,10 @@ The built-in scss already give responsiveness and custom stylings to html elemen
 
 <br />
 
-## **Eco-System & SCSS**
+## **Ecosystem & SCSS**
 
 ### What are we talking about?
-CloudKit has a so called 'eco-system', where everything works together with the purpose of giving the best user experience. Everything can be customized by you! You can give custom preferences like the color-theme, or which reusable class should be compiled or not. CloudKit has already a default configuration which you can use of course.
+CloudKit has a so called 'ecosystem', where everything works together with the purpose of giving the best user experience. Everything can be customized by you! You can give custom preferences like the color-theme, or which reusable class should be compiled or not. CloudKit has already a default configuration which you can use of course.
 
 ### Docs
 All classes and mixins are documented in detail at the following [page (todo)](#link)
@@ -75,27 +75,40 @@ With svelte-kit, a good idea would to include it in your root __layout.svelte. T
 ```html
 // __layout.svelte
 <style lang="scss" global>
-    @use 'svelte-cloudkit/scss/global' as *; // No namespace is needed
+    @use '@cloudscript.live/svelte-cloudkit/scss/base';
 </style>
 ```
 
-### How to configure the eco-system
+It is also possible to import the scss in your `svelte.config.js`. Like this:
+```js
+...
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: preprocess({
+		scss: { prependData: '@use "@cloudscript.live/svelte-cloudkit/scss/base";' }
+	}),
+	...
+};
+
+export default config;
+```
+
+### How to configure the ecosystem
 As mentioned before, you could use CloudKit without any further configurations, but of course everybody has different needs.
 
-After you imported all global stylings, you can override them using the `with` key.
+After you imported all global stylings, you can override $variables using the `with` key.
   
   *@forward would work too but it's not recommended, since it has a different purpose*
 
 ```html
 // __layout.svelte
 <style lang="scss" global>
-  @use 'svelte-cloudkit/scss/conf' as CONFIG with ( // Namespace is recommended to avoid conflicts
-      $boxed: 9% 9% // This would override the variable var(--boxed)
-  );
-
-  @use 'svelte-cloudkit/scss/global' as *; // Always include after the configurations! 
+	@use '@cloudscript.live/svelte-cloudkit/scss/base' with (
+      	$boxed: 9% 9% // This will override the variable var(--boxed)
+	);
 </style>
 ```
+
 Pretty easy, right? A full documentation of all possibile configurations can be found [here (todo)](#lol)
 
 <br />
@@ -107,7 +120,7 @@ For the first example let's use a simple one, the `<button>`.
 ```typescript
 <script lang="ts">
     // Import the button component
-	import Button from 'svelte-cloudkit/components/user/button.svelte';
+	import { Button } from '@cloudscript.live/svelte-cloudkit';
 
 	// Define onClick function
 	function onClick() {
@@ -122,7 +135,7 @@ Now let's try the `context-menu`:
 ```typescript
 <script lang="ts">
 	// Import the ContextMenu component
-	import ContextMenu from 'svelte-cloudkit/components/user/ContextMenu.svelte';
+	import { ContextMenu } from '@cloudscript.live/svelte-cloudkit';
  
 	// For the image an absolute path is needed (any img format).
 	const contextMenuConfig: CloudKit.ContextMenu.config = {
@@ -226,6 +239,8 @@ declare namespace Theme {
 ```
 ### Default colors
 Most of the colors are from boostrap but there are some extras. These color **have to be defined** when overwritten, because all components inherit at least one of these colors.
+
+*I'm sorry if the colors are not showing :( . Working on it.*
 
 - ![#202123](https://via.placeholder.com/15/202123/000000?text=+) `#202123 background`
 - ![#0d6efd](https://via.placeholder.com/15/0d6efd/000000?text=+) `#0d6efd blue`
