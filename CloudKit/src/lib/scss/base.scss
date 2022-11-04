@@ -1,2 +1,3 @@
+@forward 'conf';
 @use './template.scss' as DefaultTemplate;
 @include DefaultTemplate.generate;
