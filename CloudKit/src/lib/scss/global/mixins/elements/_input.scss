@@ -1,7 +1,7 @@
 @mixin inputField($padding: 0.5rem, $prefixImageSize: 25px) {
 	background-color: transparent;
 	border: none;
-	color: var(--text-primary);
+	color: var(--text);
 	outline: none;
 	padding: $padding $padding;
 

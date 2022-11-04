@@ -41,7 +41,7 @@ span {
 
 .special-component {
 	border: 1px double var(--special);
-	color: var(--text-primary);
+	color: var(--text);
 	transition: background 250ms ease-in-out;
 
 	&:hover,
@@ -52,5 +52,5 @@ span {
 
 .dark-component,
 .primary-component {
-	color: var(--text-primary);
+	color: var(--text);
 }
