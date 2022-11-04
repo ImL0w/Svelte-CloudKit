@@ -35,7 +35,7 @@
 	style:width
 >
 	{#if tag}
-		<Tag classList="m-l-2" color={tag.color} textColor="var(--text-primary)">{tag.value}</Tag>
+		<Tag classList="m-l-2" color={tag.color} textColor="var(--text)">{tag.value}</Tag>
 	{:else if prefixImage?.path}
 		<img alt="" class="icon" src={prefixImage.path} />
 	{/if}
