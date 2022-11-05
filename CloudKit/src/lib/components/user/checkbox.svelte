@@ -5,7 +5,7 @@
 	export let classList = '';
 	export let checked = false;
 	export let label = '';
-	export let size: Theme.FontSizes = 'sm';
+	export let size: CloudKit.Theme.FontSizes = 'sm';
 </script>
 
 <h4

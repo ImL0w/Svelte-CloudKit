@@ -1,7 +1,7 @@
 <script lang="ts">
 	// EXPORTS
-	export let item: TContextMenu.item;
-	export let commonFunction: TContextMenu.commonFunction | null = null;
+	export let item: CloudKit.ContextMenu.item;
+	export let commonFunction: CloudKit.ContextMenu.commonFunction | null = null;
 	// LOGIC
 	const preventContextMenu = (e: MouseEvent) => e.preventDefault();
 </script>

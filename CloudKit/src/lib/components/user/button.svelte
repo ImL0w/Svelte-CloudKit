@@ -15,8 +15,8 @@ todo
 	export let outline: Boolean = false;
 	export let background: String = '';
 	export let uppercase: Boolean = false;
-	export let size: Theme.FontSizes = 'sm';
-	export let theme: Theme.Colors | Themes | string = Themes.DARK;
+	export let size: CloudKit.Theme.FontSizes = 'sm';
+	export let theme: CloudKit.Theme.Colors | Themes | string = Themes.DARK;
 	export let classList = '';
 	export let fweight = '';
 	export let fitContent = false;

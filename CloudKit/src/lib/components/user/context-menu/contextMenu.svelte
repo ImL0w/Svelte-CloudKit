@@ -15,11 +15,11 @@ This is a fully functional context menu. It inherits CloudScript scss themes.
 	// COMPONENTS
 	import ContextMenuItem from './__contextMenuItem.svelte';
 	// EXPORTS
-	export let commonFunction: TContextMenu.commonFunction | null = null,
-		contextMenuEvent: TContextMenu.contextMenuEvent = () => {};
-	export let items: TContextMenu.item[];
+	export let commonFunction: CloudKit.ContextMenu.commonFunction | null = null,
+		contextMenuEvent: CloudKit.ContextMenu.contextMenuEvent = () => {};
+	export let items: CloudKit.ContextMenu.item[];
 	export let targetsSelector: string;
-	export let theme: Theme.Colors | string = 'dark';
+	export let theme: CloudKit.Theme.Colors | string = 'dark';
 	export const refreshListeners = () => setListeners();
 	// LOGIC
 	let contextMenuInstance: HTMLElement;

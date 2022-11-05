@@ -13,13 +13,13 @@ This component has a custom way to deal with responsivness and filters too!
 	import Dropdown from '$lib/components/user/dropdown.svelte';
 	import TableContextMenu from '$lib/components/user/context-menu/contextMenu.svelte';
 	// EXPORTS
-	export let columns: TDataTable.Horizontal['columns'];
-	export let contextMenuConfig: TContextMenu.config | null = null;
+	export let columns: CloudKit.DataTable.Horizontal['columns'];
+	export let contextMenuConfig: CloudKit.ContextMenu.config | null = null;
 
-	export let rows: TDataTable.Horizontal['rows'];
+	export let rows: CloudKit.DataTable.Horizontal['rows'];
 	export let width = 'auto';
 	// LOGIC
-	const sorting: TDataTable.Horizontal['sorting'] = [
+	const sorting: CloudKit.DataTable.Horizontal['sorting'] = [
 		{ type: 'sort', values: objectsToRaw('name', ...columns) },
 		{ type: 'filter', values: ['Filter'] },
 		{ type: 'sort', values: ['Sort'] }

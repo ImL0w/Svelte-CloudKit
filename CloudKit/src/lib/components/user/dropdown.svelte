@@ -5,8 +5,8 @@
 	export let name = '',
 		id = '';
 	export let options: Array<{ img: string; value: string } | string>;
-	export let theme: Theme.Colors | string = 'dark',
-		size: Theme.FontSizes = 'xs';
+	export let theme: CloudKit.Theme.Colors | string = 'dark',
+		size: CloudKit.Theme.FontSizes = 'xs';
 	export let selected: any = undefined;
 </script>
 

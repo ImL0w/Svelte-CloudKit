@@ -13,8 +13,8 @@
 	export let width = '',
 		height = '',
 		maxWidth = '';
-	export let size: Theme.FontSizes = 'xs';
-	export let theme: Theme.Colors | Themes | string = Themes.DARK;
+	export let size: CloudKit.Theme.FontSizes = 'xs';
+	export let theme: CloudKit.Theme.Colors | Themes | string = Themes.DARK;
 	export let classList: string = '';
 	export let hidden = false;
 	export let tag: { color: string; value: string } | null = null;

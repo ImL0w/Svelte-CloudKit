@@ -4,8 +4,8 @@
 	// EXPORTS
 	export let classList = '';
 	export let color: string,
-		func: TTag.func | null = null,
-		size: TTag.size = 'xs';
+		func: CloudKit.Tag.func | null = null,
+		size: CloudKit.Tag.size = 'xs';
 	export let textColor: string = '';
 </script>
 

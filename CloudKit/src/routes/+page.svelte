@@ -4,7 +4,7 @@
 	import Dropdown from '$lib/components/user/dropdown.svelte';
 	import Tag from '$lib/components/layout/Tag.svelte';
 
-	const contextMenuConfig: TContextMenu.config = {
+	const contextMenuConfig: CloudKit.ContextMenu.config = {
 		items: [{ value: 'rename' }, { value: 'alert', func: () => alert(1) }, { value: 'close' }]
 	};
 </script>
