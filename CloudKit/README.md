@@ -199,7 +199,7 @@ body {
 
 ```
 #### This is a graphical representation.
-<img src="./static/overview.png" />
+<img src="https://github.com/ImL0w/Svelte-CloudKit/raw/main/CloudKit/static/overview.png" />
 
 <br />
 
