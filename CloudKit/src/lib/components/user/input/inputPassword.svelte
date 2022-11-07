@@ -59,6 +59,7 @@
 		border-radius: 4px;
 		padding-left: 0.5rem;
 		max-width: var(--icon-size);
+		min-width: 18ch;
 
 		&.img-prefix-focus {
 			padding: 0.35em;
