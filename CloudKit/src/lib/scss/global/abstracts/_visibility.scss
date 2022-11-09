@@ -61,23 +61,3 @@
 		}
 	}
 }
-
-.overflow {
-	@each $direction in '', -x, -y {
-		&#{$direction} {
-			@each $appendix in h, scr {
-				&-#{$appendix} {
-					overflow#{$direction}: if($appendix == h, hidden, scroll);
-				}
-			}
-		}
-	}
-}
-
-.rotate {
-	@each $deg in 90, 180 {
-		&-#{$deg} {
-			transform: rotate(#{$deg}deg);
-		}
-	}
-}

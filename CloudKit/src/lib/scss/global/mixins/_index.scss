@@ -1,6 +1,5 @@
 @use '../../conf/img-conf' as ImgConfig;
 
-@forward 'animation/transition';
 @forward 'display/flexbox';
 @forward 'elements/text';
 @forward 'elements/button';
@@ -14,3 +13,4 @@
 	$icon-size-md: ImgConfig.$logo-size-md
 );
 @forward 'elements/checkbox';
+@forward 'animation/transition';

@@ -1,0 +1,11 @@
+.overflow {
+	@each $direction in '', -x, -y {
+		&#{$direction} {
+			@each $appendix in h, scr {
+				&-#{$appendix} {
+					overflow#{$direction}: if($appendix == h, hidden, scroll);
+				}
+			}
+		}
+	}
+}

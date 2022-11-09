@@ -1,0 +1,7 @@
+.rotate {
+	@each $deg in 90, 180 {
+		&-#{$deg} {
+			transform: rotate(#{$deg}deg);
+		}
+	}
+}

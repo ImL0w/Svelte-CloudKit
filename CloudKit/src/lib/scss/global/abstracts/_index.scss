@@ -1,13 +1,15 @@
 @use '../../conf/' as Config;
 
-@forward './colors' with($colorTheme: Config.$colorTheme);
-@forward './font' with($font: Config.$font);
-@forward './spacing' with (
+@forward 'visibility';
+@forward 'overflow';
+@forward 'colors' with($colorTheme: Config.$colorTheme);
+@forward 'font' with($font: Config.$font);
+@forward 'spacing' with (
 	$boxed: Config.$boxed,
 	$fluid: Config.$fluid,
 	$boxed-md: Config.$boxed-md,
 	$fluid-md: Config.$fluid-md
 );
-@forward './generic';
-@forward './display';
-@forward './position';
+@forward 'generic';
+@forward 'position';
+@forward 'transform';
