@@ -51,7 +51,7 @@
 	}
 
 	&.bold {
-		font-weight: 500;
+		font-weight: bold;
 	}
 
 	&.space-nowrap {
@@ -72,18 +72,19 @@
 @mixin h3 {
 	@include text(null, true);
 	font-size: var(--fs-md);
+	font-weight: 500;
 }
 
 @mixin h4 {
 	@include text;
-	font-weight: lighter;
 	font-size: var(--fs-sm);
+	font-weight: lighter;
 }
 
 @mixin h5 {
 	@include text(null, true);
-	font-weight: lighter;
 	font-size: var(--fs-xs);
+	font-weight: lighter;
 }
 
 @mixin p {
