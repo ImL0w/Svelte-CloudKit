@@ -8,6 +8,10 @@
 		@extend .special-component;
 	}
 
+	&.upper {
+		text-transform: uppercase;
+	}
+
 	&.sm,
 	&.md {
 		padding: 0.5em;
