@@ -6,25 +6,25 @@
 
 	&-sm {
 		@include mediaMin($mobile) {
-			display: none;
+			display: none !important;
 		}
 	}
 
 	&-md {
 		@include mediaMin($tablet) {
-			display: none;
+			display: none !important;
 		}
 	}
 
 	&-lg {
 		@include mediaMin($pc) {
-			display: none;
+			display: none !important;
 		}
 	}
 
 	&-xl {
 		@include mediaMin($tv) {
-			display: none;
+			display: none !important;
 		}
 	}
 }
