@@ -7,8 +7,6 @@ todo
 <script lang="ts">
 	// UTILITY
 	import { concatClasses } from '$lib/ts/utility/array';
-	// ENMUS
-	import { Themes } from '$lib/ts/enum/Themes';
 	// EXPORTS
 	export let func: () => void = () => {};
 	export let href: String = '';
@@ -16,11 +14,10 @@ todo
 	export let background: String = '';
 	export let uppercase: Boolean = false;
 	export let size: CloudKit.Theme.FontSizes = 'sm';
-	export let theme: CloudKit.Theme.Colors | Themes | string = Themes.DARK;
+	export let theme: CloudKit.Theme.Colors | string = "dark";
 	export let classList = '';
 	export let fweight = '';
 	export let fitContent = false;
-	export let noWrap = true;
 	// LOGIC
 	function click_handle() {
 		if (href) window.location.href = href.toString();
@@ -32,7 +29,6 @@ todo
 	style:background-color={background}
 	style:font-weight={fweight}
 	style:max-width={fitContent ? 'fit-content' : null}
-	style:white-space={noWrap ? 'no-wrap' : null}
 	class:upper={uppercase}
 	class:outline
 	class={concatClasses(classList, size, theme)}

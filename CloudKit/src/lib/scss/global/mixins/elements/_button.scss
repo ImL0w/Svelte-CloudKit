@@ -2,7 +2,23 @@
 	border-radius: 3px;
 	cursor: pointer;
 	transition: border-color ease-in 150ms;
-	@extend .w-fit;
+	width: fit-content;
+
+	&.dark {
+		@extend .dark-component;
+	}
+
+	&.light {
+		@extend .light-component;
+
+		&:hover {
+			background-color: hsla(0, 0%, 100%, 0.83);
+		}
+	}
+
+	&.primary {
+		@extend .primary-component;
+	}
 
 	&.special {
 		@extend .special-component;

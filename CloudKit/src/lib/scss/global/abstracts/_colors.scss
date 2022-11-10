@@ -34,12 +34,13 @@ span {
 }
 
 .light-component {
-	background-color: var(--white);
+	background-color: var(--light);
 	border: 1px var(--borders) solid;
 	color: rgba(0, 0, 0, 0.6);
 }
 
 .special-component {
+	background-color: transparent;
 	border: 1px double var(--special);
 	color: var(--text);
 	transition: background 250ms ease-in-out;
