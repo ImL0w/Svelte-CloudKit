@@ -1,4 +1,4 @@
-@use '../../utility/responsive.scss' as *;
+@use '../../utility/responsive.scss' as Utilis;
 
 @mixin flex($direction: row, $important: false, $plain: null) {
 	@if $plain != 'direction' {
@@ -63,9 +63,9 @@
 
 @mixin __flexResponsive(
 	$sizes: (
-		sm: 3em,
-		md: 3em,
-		xl: 3em
+		sm: Utilis.$mobile,
+		md: Utilis.$tablet,
+		xl: Utilis.$pc
 	)
 ) {
 	$directions: row, column;
@@ -91,7 +91,7 @@
 					&-#{$key} {
 						@extend .flex#{$prefix};
 						//3.1 ex. flex-col-md || flex-col-md!
-						@include mediaMin($size) {
+						@include Utilis.mediaMin($size) {
 							@include flex($opposite, false, direction);
 
 							@include __important() {
@@ -107,7 +107,7 @@
 			@each $key, $size in $sizes {
 				// ex 1 flex-d-sm || flex-d-sm!
 				&-#{$key} {
-					@include mediaMin($size) {
+					@include Utilis.mediaMin($size) {
 						@include flex(null, false, display);
 						@include __important() {
 							@include flex(null, true, display);
