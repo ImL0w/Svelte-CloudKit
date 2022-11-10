@@ -16,7 +16,7 @@
 <Tag color="primary">asdas</Tag>
 
 <div id="index" class="transition-all-250">
-	<div id="app-content">
+	<div id="app-content" class="flex-col-md">
 		<Dropdown options={[{ img: '', value: 'lol' }, 'lol']} />
 		<h1>Welcome!</h1>
 	</div>
