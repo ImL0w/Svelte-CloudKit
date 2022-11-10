@@ -1,4 +1,4 @@
-@use '../../utility/responsive.scss' as Utilis;
+@use '../../utility/' as Utilis;
 
 @mixin flex($direction: row, $important: false, $plain: null) {
 	@if $plain != 'direction' {
