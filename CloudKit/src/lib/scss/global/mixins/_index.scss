@@ -10,7 +10,7 @@
 	$logo-size: ImgConfig.$logo-size,
 	$icon-size: ImgConfig.$icon-size,
 	$logo-size-md: ImgConfig.$logo-size-md,
-	$icon-size-md: ImgConfig.$logo-size-md
+	$icon-size-md: ImgConfig.$icon-size-md
 );
 @forward 'elements/checkbox';
 @forward 'animation/transition';
