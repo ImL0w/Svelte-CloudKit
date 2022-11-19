@@ -138,7 +138,6 @@ This component has a custom way to deal with responsivness and filters too!
 			}
 
 			.row-collapse .collapse-btn {
-				background-color: var(--component);
 				border-radius: 4px;
 				height: 25px;
 				width: 70%;

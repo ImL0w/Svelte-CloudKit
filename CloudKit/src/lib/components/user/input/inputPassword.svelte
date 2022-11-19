@@ -54,7 +54,6 @@
 
 <style lang="scss">
 	.input-text {
-		background-color: var(--component);
 		border: 2px solid var(--borders);
 		border-radius: 4px;
 		padding-left: 0.5rem;
@@ -62,6 +61,7 @@
 
 		&.img-prefix-focus {
 			padding: 0.35em;
+			min-width: auto;
 		}
 
 		&:hover {
