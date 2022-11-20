@@ -7,6 +7,7 @@ import Dropdown from './components/user/dropdown.svelte';
 import InputArea from './components/user/input/inputArea.svelte';
 import InputPassword from './components/user/input/inputPassword.svelte';
 import InputText from './components/user/input/inputText.svelte';
+import RadioButton from './components/user/radioButton.svelte';
 import Tag from './components/layout/Tag.svelte';
 
 export {
@@ -19,5 +20,6 @@ export {
 	InputArea,
 	InputPassword,
 	InputText,
+	RadioButton,
 	Tag
 };
