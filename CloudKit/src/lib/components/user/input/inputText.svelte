@@ -52,7 +52,7 @@
 
 <style lang="scss">
 	.input-text {
-		border: 2px solid var(--borders);
+		border: 1px solid var(--borders);
 		border-radius: 4px;
 		padding-left: 0.5rem;
 		min-width: 18ch;
