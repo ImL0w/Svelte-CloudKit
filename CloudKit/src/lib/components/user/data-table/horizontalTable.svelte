@@ -8,7 +8,7 @@ This component has a custom way to deal with responsivness and filters too!
 -->
 <script lang="ts">
 	// UTILITY
-	import { objectsToRaw } from '$lib/ts/utility/array';
+	import { extractObjValues } from '$lib/ts/utility/array';
 	// COMPONENTS
 	import Dropdown from '$lib/components/user/dropdown.svelte';
 	import TableContextMenu from '$lib/components/user/context-menu/contextMenu.svelte';
@@ -20,7 +20,7 @@ This component has a custom way to deal with responsivness and filters too!
 	export let width = 'auto';
 	// LOGIC
 	const sorting: CloudKit.DataTable.Horizontal['sorting'] = [
-		{ type: 'sort', values: objectsToRaw('name', ...columns) },
+		{ type: 'sort', values: extractObjValues('name', ...columns) },
 		{ type: 'filter', values: ['Filter'] },
 		{ type: 'sort', values: ['Sort'] }
 	];
