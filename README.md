@@ -23,7 +23,7 @@
 #### `Typescript`
 * **Utilities**
   * **array functions**
-    * objectsToRaw
+    * extractObjValues
     * concatClasses
   * **async functions**
     * pause
