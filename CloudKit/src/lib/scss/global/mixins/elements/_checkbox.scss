@@ -1,8 +1,9 @@
-@mixin checkbox($box-padding: 0.7em, $box-thick-size: 1em) {
+@mixin checkbox($box-padding: 0.3em, $box-thick-size: 1em) {
 	appearance: none;
-	border: 2px var(--borders) solid;
-	border-radius: 2px;
+	border: 1px var(--borders) solid;
+	border-radius: 3px;
 	display: grid;
+	margin: 0;
 	padding: $box-padding;
 	place-content: center;
 	-webkit-appearance: none;
@@ -15,7 +16,7 @@
 		transform: scale(0);
 		transform-origin: bottom left;
 		transition: 90ms transform ease-in-out;
-		width: $box-thick-size;
+		width: calc($box-thick-size);
 	}
 
 	&:checked::before {
