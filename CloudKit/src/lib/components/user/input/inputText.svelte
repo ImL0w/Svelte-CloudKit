@@ -1,8 +1,6 @@
 <script lang="ts">
 	// UTILITY
 	import { concatClasses } from '$lib/ts/utility/array';
-	// ENMUS
-	import { Themes } from '$lib/ts/enum/Themes';
 	// COMPONENTS
 	import Tag from '$lib/components/layout/Tag.svelte';
 	// EXPORTS
@@ -14,7 +12,7 @@
 		height = '',
 		maxWidth = '';
 	export let size: CloudKit.Theme.FontSizes = 'xs';
-	export let theme: CloudKit.Theme.Colors | Themes | string = Themes.DARK;
+	export let theme: CloudKit.Theme.Colors | string = 'dark';
 	export let classList: string = '';
 	export let hidden = false;
 	export let tag: { color: string; value: string } | null = null;

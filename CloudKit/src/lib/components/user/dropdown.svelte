@@ -28,6 +28,7 @@
 		border-radius: 3px;
 		display: grid;
 		grid-template-areas: 'select';
+		max-height: fit-content;
 		min-width: 10ch;
 		width: fit-content;
 
@@ -46,7 +47,7 @@
 				display: none;
 			}
 		}
-		
+
 		&::after {
 			clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 			content: '';
