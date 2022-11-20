@@ -6,7 +6,7 @@
  * Output ==> ["123", "nana"]
  */
 
-export function extractObjValues(key: string, ...objects: object[]): unknown[] {
+export function extractObjValues(key: string, ...objects: object[]): never[] {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	return objects.map((obj) => obj[key] ?? undefined)?.filter((obj) => obj) || [];
