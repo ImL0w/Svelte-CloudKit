@@ -78,6 +78,10 @@
 				@include checkbox;
 			}
 
+			textarea {
+				@include textarea;
+			}
+
 			button {
 				@include button;
 			}
