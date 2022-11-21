@@ -1,0 +1,30 @@
+@mixin progressbar {
+	&-wrap {
+		border: 1px solid var(--borders);
+		border-radius: 5px;
+		height: 18px;
+		padding: 2px;
+
+		&-value {
+			border-color: transparent;
+			border-radius: 3px;
+			border-width: 0 !important;
+		}
+	}
+
+	&.dark .progressbar-wrap-value {
+		@extend .dark-component;
+	}
+
+	&.special .progressbar-wrap-value {
+		background-color: var(--special);
+	}
+
+	&.light .progressbar-wrap-value {
+		@extend .light-component;
+	}
+
+	&.primary .progressbar-wrap-value {
+		@extend .primary-component;
+	}
+}
