@@ -93,6 +93,10 @@
 			table {
 				@include DataTable;
 			}
+
+			.progressbar {
+				@include progressbar;
+			}
 		}
 	}
 }
