@@ -1,18 +1,24 @@
 @mixin button {
 	border-radius: 3px;
 	cursor: pointer;
-	transition: border-color ease-in 150ms;
+	transition: border-color, background-color ease-in 150ms;
 	width: fit-content;
+
+	&:active {
+		outline: solid 2px var(--borders) !important;
+	}
 
 	&.dark {
 		@extend .dark-component;
+		&:hover {
+			background-color: var(--gray);
+		}
 	}
 
 	&.light {
 		@extend .light-component;
-
 		&:hover {
-			background-color: hsla(0, 0%, 100%, 0.83);
+			background-color: hsla(0, 0%, 100%, 0.75);
 		}
 	}
 
