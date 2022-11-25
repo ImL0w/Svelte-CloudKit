@@ -20,7 +20,12 @@
 	<div id="app-content">
 		<h1>Welcome!</h1>
 		<div class="flex-col gap-3">
-			<Button>Lol</Button>
+			<div class="flex gap-3">
+				<Button>Dark</Button>
+				<Button theme="primary">Primary</Button>
+				<Button theme="light">Light</Button>
+				<Button theme="special">Special</Button>
+			</div>
 			<Tag color="red">asdas</Tag>
 			<Dropdown options={[{ img: '', value: 'lol' }, 'lol']} />
 			<InputArea value="Shiiiish" resizable />
@@ -29,7 +34,6 @@
 			<Checkbox checked label="okay lets go" tooltip="lool" size="lg" />
 			<Checkbox label="okay lets go" />
 			<InputText />
-
 			<div class="flex flex-vr gap-3">
 				<Button
 					func={() => {
