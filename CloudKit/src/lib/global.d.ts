@@ -1,6 +1,4 @@
 /// <reference types="@sveltejs/kit" />
-import type { ExtraElements } from './ts/enum/DataTable';
-
 declare global {
 	namespace CloudKit {
 		namespace Theme {
@@ -9,10 +7,8 @@ declare global {
 		}
 
 		namespace DataTable {
-			interface Horizontal {
+			interface Table {
 				columns: Array<{ name: string; img?: string }>;
-				preferences: { extraElements: ExtraElements[] };
-				rows: Array<Array<{ content: string; img?: string }>>;
 				sorting: Array<{ type: 'sort' | 'filter'; values: string[] }>;
 			}
 		}
