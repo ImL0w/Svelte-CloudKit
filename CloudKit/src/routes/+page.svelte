@@ -1,6 +1,12 @@
 <script lang="ts">
+	// SVELTE
+	import { onMount } from 'svelte';
+	// STORES
+	import { dataTableStore, type TableRowData } from '$lib/ts/stores/dataTable';
+	// COMPONENTS
 	import Button from '$lib/components/user/button.svelte';
 	import ContextMenu from '$lib/components/user/context-menu/contextMenu.svelte';
+	import Datatable from '$lib/components/user/data-table/table.svelte';
 	import Dropdown from '$lib/components/user/dropdown.svelte';
 	import Tag from '$lib/components/layout/Tag.svelte';
 	import InputArea from '$lib/components/user/input/inputArea.svelte';
@@ -13,7 +19,32 @@
 		items: [{ value: 'rename' }, { value: 'alert', func: () => alert(1) }, { value: 'close' }]
 	};
 
+	const tableCols: CloudKit.DataTable.Table['columns'] = [
+		{ name: 'Col1' },
+		{ name: 'Col2' },
+		{ name: 'Col3' },
+		{ name: 'Col4' },
+		{ name: 'Col5' }
+	];
+
+	const tableRows: TableRowData[] = [
+		new Array(tableCols.length).fill({
+			content: 'Data for row 1',
+			extra: { data: 'Extra data!', title: "I've got a Title" }
+		}),
+		new Array(tableCols.length).fill({
+			content: 'Data for row 2',
+			extra: { data: "I've got a tag!", tagColor: 'green' }
+		})
+	];
+
 	$: progress = 0;
+	let tableId: () => string;
+	onMount(() => {
+		tableRows.forEach((row) => {
+			dataTableStore.addData(tableId(), row);
+		});
+	});
 </script>
 
 <div id="index" class="transition-all-250">
@@ -48,6 +79,18 @@
 				<ProgressBar theme="light" percentage={progress} />
 				<ProgressBar theme="primary" percentage={progress} />
 			</div>
+			<Button
+				func={() => {
+					dataTableStore.addData(
+						tableId(),
+						new Array(tableCols.length).fill({
+							content: 'new row!',
+							extra: { data: 'new extra data!!', title: 'New title' }
+						})
+					);
+				}}>Add Row</Button
+			>
+			<Datatable bind:getId={tableId} borders extraData columns={tableCols} {contextMenuConfig} />
 		</div>
 	</div>
 </div>
