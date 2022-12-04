@@ -58,6 +58,7 @@ This is a fully functional context menu. It inherits CloudScript scss themes.
 	onMount(() => setListeners());
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	bind:this={contextMenuInstance}
 	class={`context-menu flex-col w-fit transition-opacity-85 ${theme}-component`}
