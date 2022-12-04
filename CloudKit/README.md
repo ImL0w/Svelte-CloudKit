@@ -13,7 +13,6 @@
 #### `Svelte components`
 * Context-menu
 * Data-table
-  * Horizontal
 * Input-field
 * Input-password
 * Button
