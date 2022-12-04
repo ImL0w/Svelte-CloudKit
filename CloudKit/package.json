@@ -1,6 +1,6 @@
 {
 	"name": "@cloudscript.live/svelte-cloudkit",
-	"version": "1.4.17",
+	"version": "2.4.17",
 	"private": false,
 	"publishConfig": {
 		"access": "public"
