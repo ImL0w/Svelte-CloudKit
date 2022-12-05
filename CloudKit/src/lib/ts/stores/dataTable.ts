@@ -34,8 +34,8 @@ class DataTableStore {
 	private __tablesSubscribed: TableInstances | undefined = undefined;
 
 	constructor() {
-		this.__tables.subscribe(($tables) => {
-			this.__tablesSubscribed = $tables;
+		this.__tables.subscribe((tables) => {
+			this.__tablesSubscribed = tables;
 		});
 	}
 

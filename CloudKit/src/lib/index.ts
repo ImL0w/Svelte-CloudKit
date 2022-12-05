@@ -1,3 +1,5 @@
+// STORES
+import { dataTableStore } from './ts/stores/dataTable';
 // TS
 import { extractObjValues, concatClasses } from './ts/utility/array';
 import { pause } from './ts/utility/async';
@@ -28,6 +30,7 @@ export {
 	Checkbox,
 	ContextMenu,
 	Datatable,
+	dataTableStore,
 	Dropdown,
 	InputArea,
 	InputPassword,
