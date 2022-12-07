@@ -1,6 +1,6 @@
 # CloudKit
 
-## Free lightweight library for svelte/kit projects! (~75.3 kB) 
+## Free lightweight library for svelte/kit projects! (~89.8 kB) 
 *Created and used by [CloudScript](https://www.cloudscript.live/en/). Currently **under development!***
 
 ## **Disclaimer** ⚠️
