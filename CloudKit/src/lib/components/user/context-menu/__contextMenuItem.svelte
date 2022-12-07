@@ -6,6 +6,7 @@
 	const preventContextMenu = (e: MouseEvent) => e.preventDefault();
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
 	class="menu-item flex-1 flex flex-vr w-100 rlv pointer"
 	class:parent-item={item.inner}
