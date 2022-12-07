@@ -1,12 +1,12 @@
 <!--
   @component
-**CloudScript Context Menu**
+**CloudKit Context Menu**
 
 This is a fully functional context menu. It inherits CloudScript scss themes.
 * **items**: ContextMenu['items'] - List of items to be displayed. A function can be attached to each item wich will be invoked on item clcik.
 * **targetsSelector**: string - Query selector for the target/s that should show the context menu.
 * **commonFunction**: (event?: MouseEvent) => void - Function that that gets invoked on every item click. ContextMenu['item']['func'] will not be considered
-* **contextMenuEvent**: (event?: HTMLElement) => void - Function that should run at the contextmenu event.
+* **contextMenuEvent**: (target: HTMLElement) => void - Function that should run at the contextmenu event.
 * **refreshListeners**: () => void - Resets all event listeners. Useful when new elemnts are dynamically added to the dom. Otherwise, event listeners will be added automatically on component mount.
 -->
 <script lang="ts">
@@ -15,14 +15,64 @@ This is a fully functional context menu. It inherits CloudScript scss themes.
 	// COMPONENTS
 	import ContextMenuItem from './__contextMenuItem.svelte';
 	// EXPORTS
+	/**
+	 * Functions that executes on all items
+	 */
 	export let commonFunction: CloudKit.ContextMenu.commonFunction | null = null,
-		contextMenuEvent: CloudKit.ContextMenu.contextMenuEvent = () => {};
+		/**
+	 * This function is called on the `contextmenu` event and returns the element on wich the context menu event is attached
+	 * 
+	 * @example let menuEvent: (target: HTMLElement) => {
+	 // do stuff with the html element
+	 };
+
+<ContextMenu bind:contextMenuEvent={menuEvent} />
+	 * 
+	*/
+		contextMenuEvent: CloudKit.ContextMenu.contextMenuEvent = (target: HTMLElement) => {};
+	/**
+	 * Context menu items
+	 */
 	export let items: CloudKit.ContextMenu.item[];
+	/**
+	 * Selector for elements on wich the context menu needs to listen for
+	 */
 	export let targetsSelector: string;
+	/**
+	 * If combined with `targetsSelector`, the reference will be used as parent node and the selector for that specific node. Otherwise, you could use `reference` instead of `targetsSelector` if you want a specific `single` selector.
+	 *
+	 * @example // Combined
+	 * let referenceDiv: Element;
+	 * let selector = ".innerClasses"
+	 *
+	 * <ContextMenu reference={referenceDiv} targetsSelector={selector}/>
+	 * <div bind:this={referenceDiv}>
+	 * <div class="innerClasses">
+	 * ...
+	 * </div>
+	 * </div>
+	 * @example // Single
+	 * let referenceDiv: Element;
+	 *
+	 * <ContextMenu reference={referenceDiv} />
+	 * <div bind:this={referenceDiv}>...</div>
+	 */
+	export let reference: Element | null = null;
+	/**
+	 * Context menu theme
+	 */
 	export let theme: CloudKit.Theme.Colors | string = 'dark';
-	export const refreshListeners = () => setListeners();
+	/**
+	 * Refreshes listeners
+	 * 
+	 * @example let refresh: () => void;
+refresh();
+
+<ContextMenu bind:refreshListeners={refresh} />
+**/
+	export const refreshListeners = () => resolveTarget();
 	// LOGIC
-	let contextMenuInstance: HTMLElement;
+	let contextMenuInstance: Element;
 	$: top = '0px';
 	$: left = '0px';
 
@@ -32,30 +82,31 @@ This is a fully functional context menu. It inherits CloudScript scss themes.
 		left = event.clientX + 'px';
 		// @ts-ignore
 		contextMenuInstance.focus({ focusVisible: false });
-		// @ts-ignore
-		contextMenuEvent(event.currentTarget);
+		contextMenuEvent(event.currentTarget as HTMLElement);
 	};
 
-	function setListeners() {
+	function setListener(element: Element) {
+		(element as HTMLDivElement).removeEventListener('contextmenu', callback, true);
+		(element as HTMLDivElement).addEventListener('contextmenu', callback, true);
+	}
+
+	function resolveTarget() {
 		if (targetsSelector) {
-			const targetElement = Array.from(document.querySelectorAll(targetsSelector));
-			if (targetElement.length !== 0 && contextMenuInstance) {
-				// @ts-ignore
-				targetElement.forEach((target_: HTMLElement) => {
-					target_.addEventListener('contextmenu', callback, true);
-				});
+			const targetElements = Array.from((reference ?? document).querySelectorAll(targetsSelector));
+			if (targetElements.length && contextMenuInstance) {
+				targetElements.forEach((element: Element) => setListener(element));
 			} else
 				console.error(
 					`@ContextMenu target element not found! Set selector: { ${targetsSelector} }`
 				);
-		}
+		} else if (reference) setListener(reference);
 	}
 
 	function onClickClose() {
 		// todo
 	}
 
-	onMount(() => setListeners());
+	onMount(() => resolveTarget());
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
