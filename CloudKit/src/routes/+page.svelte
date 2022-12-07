@@ -5,7 +5,6 @@
 	import { dataTableStore, type TableRowData } from '$lib/ts/stores/dataTable';
 	// COMPONENTS
 	import Button from '$lib/components/user/button.svelte';
-	import ContextMenu from '$lib/components/user/context-menu/contextMenu.svelte';
 	import Datatable from '$lib/components/user/data-table/table.svelte';
 	import Dropdown from '$lib/components/user/dropdown.svelte';
 	import Tag from '$lib/components/layout/Tag.svelte';
@@ -14,10 +13,6 @@
 	import Checkbox from '$lib/components/user/checkbox.svelte';
 	import InputText from '$lib/components/user/input/inputText.svelte';
 	import ProgressBar from '$lib/components/layout/progressBar.svelte';
-
-	const contextMenuConfig: CloudKit.ContextMenu.config = {
-		items: [{ value: 'rename' }, { value: 'alert', func: () => alert(1) }, { value: 'close' }]
-	};
 
 	const tableCols: CloudKit.DataTable.Table['columns'] = [
 		{ name: 'Col1' },
@@ -40,6 +35,7 @@
 
 	$: progress = 0;
 	let tableId: () => string;
+
 	onMount(() => {
 		tableRows.forEach((row) => {
 			dataTableStore.addData(tableId(), row);
@@ -79,18 +75,25 @@
 				<ProgressBar theme="light" percentage={progress} />
 				<ProgressBar theme="primary" percentage={progress} />
 			</div>
-			<Button
-				func={() => {
-					dataTableStore.addData(
-						tableId(),
-						new Array(tableCols.length).fill({
-							content: 'new row!',
-							extra: { data: 'new extra data!!', title: 'New title' }
-						})
-					);
-				}}>Add Row</Button
-			>
-			<Datatable bind:getId={tableId} borders extraData columns={tableCols} {contextMenuConfig} />
+			<div class="flex gap-3">
+				<Button
+					func={() => {
+						dataTableStore.addData(
+							tableId(),
+							new Array(tableCols.length).fill({
+								content: 'new row!',
+								extra: { data: 'new extra data!!', title: 'New title' }
+							})
+						);
+					}}>Add Row</Button
+				>
+				<Button
+					func={() => {
+						dataTableStore.removeRow(tableId(), 1);
+					}}>Remove first row</Button
+				>
+			</div>
+			<Datatable bind:getId={tableId} borders extraData columns={tableCols} />
 		</div>
 	</div>
 </div>
