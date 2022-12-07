@@ -15,7 +15,7 @@ declare global {
 
 		namespace ContextMenu {
 			type commonFunction = (event?: MouseEvent) => void;
-			type contextMenuEvent = (target?: HTMLElement) => void;
+			type contextMenuEvent = (target: HTMLElement) => void;
 			type config = {
 				commonFunction?: ContextMenu.commonFunction;
 				contextMenuEvent?: ContextMenu.contextMenuEvent;
