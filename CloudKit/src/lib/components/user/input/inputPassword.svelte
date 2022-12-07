@@ -8,7 +8,7 @@
 	// EXPORTS
 	export let animations = false;
 	export let enterKeyFunc: (() => void) | null = null;
-	export let placeholder = '';
+	export let placeholder = 'password...';
 	export let value = '';
 	export let width = '',
 		height = '',
