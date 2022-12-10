@@ -1,6 +1,6 @@
 # CloudKit
 
-## Free lightweight library for svelte/kit projects! (~89.8 kB) 
+## Free lightweight library for svelte/kit projects! (~96 kB) 
 *Created and used by [CloudScript](https://www.cloudscript.live/en/). Currently **under development!***
 
 ## **Disclaimer** ⚠️
@@ -19,6 +19,7 @@
 * Checkbox
 * Dropdown
 * RadioButton
+* Popup
 * Progressbar
 * CardContainer
 * Tag
