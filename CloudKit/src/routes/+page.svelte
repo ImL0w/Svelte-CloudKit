@@ -13,6 +13,7 @@
 	import Checkbox from '$lib/components/user/checkbox.svelte';
 	import InputText from '$lib/components/user/input/inputText.svelte';
 	import ProgressBar from '$lib/components/layout/progressBar.svelte';
+	import Popup from '$lib/components/layout/Popup.svelte';
 
 	const tableCols: CloudKit.DataTable.Table['columns'] = [
 		{ name: 'Col1' },
@@ -35,6 +36,7 @@
 
 	$: progress = 0;
 	let tableId: () => string;
+	let closeWarning: () => void;
 
 	onMount(() => {
 		tableRows.forEach((row) => {
@@ -94,6 +96,14 @@
 				>
 			</div>
 			<Datatable bind:getId={tableId} borders extraData columns={tableCols} />
+			<Button func={closeWarning}>Close warning popup</Button>
+			<div class="flex gap-4">
+				<Popup theme="success"><h3>Popups!!!!</h3></Popup>
+				<Popup bind:close={closeWarning} theme="warning"
+					><h3 style:color="var(--dark)">Popups!!!!</h3></Popup
+				>
+				<Popup theme="error"><h3>Popups!!!!</h3></Popup>
+			</div>
 		</div>
 	</div>
 </div>
