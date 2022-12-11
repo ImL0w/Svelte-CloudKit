@@ -33,7 +33,7 @@
 	/**
 	 * Popup theme
 	 */
-	export let theme: 'success' | 'warning' | 'error';
+	export let theme: 'success' | 'info' | 'warning' | 'error';
 	// LOGIC
 	let reference: HTMLDivElement;
 	function closeHandle() {
@@ -89,12 +89,16 @@
 
 <style lang="scss">
 	.popup-container {
-		border: 2px solid var(--borders);
+		border: 1px solid var(--borders);
 		border-radius: 4px;
 		transition: opacity 120ms ease-out;
 
 		&.success {
 			background-color: var(--success);
+		}
+
+		&.info {
+			background-color: var(--info);
 		}
 
 		&.warning {
@@ -111,7 +115,7 @@
 		}
 
 		.popup {
-			padding: 1.2em 1em;
+			padding: 1em 0.8em;
 			&-close {
 				height: 18px;
 				right: 0.2em;
