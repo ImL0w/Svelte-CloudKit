@@ -99,6 +99,7 @@
 			<Button func={closeWarning}>Close warning popup</Button>
 			<div class="flex gap-4">
 				<Popup theme="success"><h3>Popups!!!!</h3></Popup>
+				<Popup theme="info"><h3>Popups!!!!</h3></Popup>
 				<Popup bind:close={closeWarning} theme="warning"
 					><h3 style:color="var(--dark)">Popups!!!!</h3></Popup
 				>
