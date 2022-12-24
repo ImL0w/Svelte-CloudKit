@@ -31,6 +31,10 @@
 	 */
 	export let selfClose = false;
 	/**
+	 * Function that gets called as soon as the popup closes
+	 */
+	export let onClose: () => void = () => {};
+	/**
 	 * Popup theme
 	 */
 	export let theme: 'success' | 'info' | 'warning' | 'error';
@@ -41,6 +45,7 @@
 			reference.classList.toggle('closing');
 			pause(130).then(() => {
 				reference.remove();
+				onClose();
 			});
 		}
 	}
