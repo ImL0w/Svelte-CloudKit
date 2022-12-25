@@ -5,7 +5,7 @@
 	import { pause } from '$lib/ts/utility/async';
 	// EXPORTS
 	/**
-	 * Function binded to the popup instance. If called, the popup closes.
+	 * Function binded to the popup instance. If called, the popup will be removed from the dom.
 	 *
 	 * Important: Use bind:close otherwise it wont work!
 	 * @example
@@ -16,9 +16,16 @@
 	 */
 	export const close = closeHandle;
 	/**
+	 * Delay in seconds for `selfHide` & `selfRemove` (default 3.5)
+	 */
+	export let closeDelay = 3.5;
+	/**
 	 * Width: fit-content
 	 */
 	export let fitContent = true,
+		/**
+		 * Desired width
+		 */
 		width = '';
 	/**
 	 * Absolute positioning of the popup. If not set, it's display will be `block`
@@ -27,9 +34,13 @@
 		| { top?: string; left?: string; right?: string; bottom?: string }
 		| undefined = undefined;
 	/**
-	 * Wheter to self close after 3,5s it has been shown
+	 * The popup will be hidden after 3.5s (default)
 	 */
-	export let selfClose = false;
+	export let selfHide = false;
+	/**
+	 * The popup will be removed from the dom after 3.5s (default)
+	 */
+	export let selfRemove = false;
 	/**
 	 * Function that gets called as soon as the popup closes
 	 */
@@ -44,17 +55,16 @@
 		if (reference) {
 			reference.classList.toggle('closing');
 			pause(130).then(() => {
-				reference.remove();
+				if (selfRemove) {
+					reference.parentNode?.removeChild(reference);
+				} else reference.classList.toggle('hide');
 				onClose();
 			});
 		}
 	}
 
 	onMount(() => {
-		if (selfClose)
-			pause(3500).then(() => {
-				closeHandle();
-			});
+		if (selfRemove || selfHide) pause(closeDelay * 1000).then(closeHandle);
 	});
 </script>
 
